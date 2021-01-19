@@ -4,7 +4,7 @@
       <ul>
         <li>Nome: {{ item.name }}</li>
         <li>Endereço: {{ item.address }}</li>
-        <li>Telefone: {{ item.phone }}}}</li>
+        <li>Telefone: {{ item.phone }}</li>
       </ul>
     </div>
   </div>

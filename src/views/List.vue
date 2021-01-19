@@ -40,7 +40,7 @@ export default {
           item.dependent.length > 0
             ? `<table style="width:100%">
             <tr>
-              <th>Name</th>
+              <th>Nome</th>
               <th>Idade</th>
               <th>Parentesco</th>
             </tr>

@@ -33,7 +33,6 @@ export default {
   methods: {
     ...mapActions("users", ["findUsers"]),
     show(item) {
-      console.log(item);
       this.$swal(
         "PARENTES",
         `${

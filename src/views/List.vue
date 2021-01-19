@@ -35,7 +35,7 @@ export default {
     show(item) {
       console.log(item);
       this.$swal(
-        "DEPENDENTES",
+        "PARENTES",
         `${
           item.dependent.length > 0
             ? `<table style="width:100%">

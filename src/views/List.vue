@@ -1,6 +1,11 @@
 <template>
   <div class="list">
-    <div v-for="(item, i) in getUsers" :key="i" class="item">
+    <div
+      v-for="(item, i) in getUsers"
+      :key="i"
+      @click="show(item)"
+      class="item"
+    >
       <ul>
         <li>Código: {{ item._id }}</li>
         <li>Nome: {{ item.name }}</li>
@@ -26,7 +31,31 @@ export default {
     ...mapGetters("users", ["getUsers"])
   },
   methods: {
-    ...mapActions("users", ["findUsers"])
+    ...mapActions("users", ["findUsers"]),
+    show(item) {
+      console.log(item);
+      this.$swal(
+        "DEPENDENTES",
+        `${
+          item.dependent.length > 0
+            ? `<table style="width:100%">
+            <tr>
+              <th>Name</th>
+              <th>Idade</th>
+              <th>Parentesco</th>
+            </tr>
+          ${item.dependent.map(
+            val =>
+              `<tr>
+                <td>${val.name}</td>
+                <td>${val.age}</td>
+                <td>${val.type}</td>
+              </tr>`
+          )}</table>`
+            : "Nenhum parente encontrado"
+        }`
+      );
+    }
   }
 };
 </script>
@@ -46,5 +75,10 @@ export default {
   border-radius: 10px;
   width: 400px;
   margin: 20px;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: scale(1.05);
 }
 </style>

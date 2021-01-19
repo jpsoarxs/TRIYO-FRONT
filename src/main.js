@@ -3,6 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
+import VueToastify from "vue-toastify";
+Vue.use(VueToastify);
+
+import VueTheMask from "vue-the-mask";
+Vue.use(VueTheMask);
+
 Vue.config.productionTip = false;
 
 new Vue({

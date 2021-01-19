@@ -2,6 +2,7 @@
   <div class="list">
     <div v-for="(item, i) in getUsers" :key="i" class="item">
       <ul>
+        <li>Código: {{ item._id }}</li>
         <li>Nome: {{ item.name }}</li>
         <li>Endereço: {{ item.address }}</li>
         <li>Telefone: {{ item.phone }}</li>
